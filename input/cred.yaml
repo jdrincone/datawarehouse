@@ -1,0 +1,10 @@
+redshift:
+  host: 'redshiftcluster.coblkihkhchi.us-east-2.redshift.amazonaws.com'
+  database: 'dev'
+  port: 5439
+  user: 'XXXXXXXXX'
+  password: 'XXXXXXXXX'
+
+aws:
+  arn: 'XXXXXXXXX'
+  url_s3: 'XXXXXXXXX'
