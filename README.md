@@ -27,7 +27,7 @@ la construcción de un data warehouse:
 ![Estrella](images/modelo_estrella.png)
 
 3. Diseñar proceso de ETL. En nuestro caso ya se tiene los datos de uso, los cuales se exploran inicialmente en un
-   `notebook\datawarehouse.ipynn`, encontrandose que un cliente único se caracteriza por su número de documento y tipo
+   `src\notebook\datawarehouse.ipyn`, encontrandose que un cliente único se caracteriza por su número de documento y tipo
    de documento. De igual manera una tienda se identifica como única por su código tienda, latitud y longitud. Adicional,
    de la fecha de compra se puede obtener el año y el mes de compra como columnas separadas, lo cual será de utilidad 
    a lo usurios finales por ejemplo, para la creación de tableros. Con esta exploracción se identifica de forma apropiada
