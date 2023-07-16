@@ -8,6 +8,7 @@
 
 
 ![My Image](images/modelo.png)
+![My Image](images/ejecucion.png)
 
 #!!! **Extra:** este repositorio se realizó con el objetivo de emular el desarrollo de un proyecto real, siguiendo
 los lineamientos de la información que se encuentra en la rama de master, para su instalación y funcionamiento
