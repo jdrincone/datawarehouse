@@ -49,7 +49,7 @@ archivo de credenciales el cual se alojar en `input\cred.yaml` una vez que se cl
 Pasos:
 - Clonar el repositorio
 
-```git https://github.com/jdrincone/fraudes.git```
+```git https://github.com/jdrincone/datawarehouse.git```
 
 - Crear un entorno virtual e installar los requerimientos
 
