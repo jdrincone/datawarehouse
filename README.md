@@ -10,14 +10,16 @@ como los clientes (documentos), ubicaciones (barrios), tiendas y fechas. Los hec
 como las compras realizadas por un cliente.
 Esta metodología tiene un enfoque pragmático y orientado a las necesidades del negocio, centrandose en la entrega rápida
 y agilidad de uso a los usuarios finales (lo cual lo veremos en un dasboard para la creación de indicadores al final 
-de este reporte)
+de este reporte). Esta metodología tiene un enfoque iterativo e incremental, es decir, irá creciendo con el tiempo
+dada las necesidades del negocio, por tanto una forma de trabajar de es escalable (o se desea que sea escalable) con 
+el pasar del tiempo y el crecimiento de la empresa.
 
 A continuación, se presentan los principales pasos de la metodología de Kimball para
 la construcción de un data warehouse:
 
 
 1.  Identificar el proceso empresarial. En nuestro caso tenemos datos de compras realizadas por cientes en tiendas
-    ubicadas en algún lugar (cali) y tiempo (año 2022)
+    ubicadas en algún lugar (cali) y tiempo (año 2022).
 2. Diseñar el esquema dimensional. Las dimensiones y hechos se organizan en un esquema de estrella el cual se muestra
    a continuación.
    Dimensiones: documentos, tiempos, tiendas, barrios.
@@ -26,13 +28,13 @@ la construcción de un data warehouse:
 
 3. Diseñar proceso de ETL. En nuestro caso ya se tiene los datos de uso, los cuales se exploran inicialmente en un
    `notebook\datawarehouse.ipynn`, encontrandose que un cliente único se caracteriza por su número de documento y tipo
-   de documento. De igual manera una tienda se identifica como unica por su código tienda, latitud y longitud. Adicional,
+   de documento. De igual manera una tienda se identifica como única por su código tienda, latitud y longitud. Adicional,
    de la fecha de compra se puede obtener el año y el mes de compra como columnas separadas, lo cual será de utilidad 
    a lo usurios finales por ejemplo, para la creación de tableros. Con esta exploracción se identifica de forma apropiada
    las relaciones entre las tablas de dimensión y la tabla de hechos. Por último, los datos de entrada al
-   datawarehouse se alojaran en el S3 y se creará una conexión entre el S3 y el motor usada el cual será Redshift que
+   datawarehouse se alojaran en el S3 y se creará una conexión entre el S3 y el motor usado el cual será Redshift que
    es una Base de datos columnar que permite la construcción de datawarehouse modernos.
-4. Escoger motor de base de datos usados es Redshift ¿Por qué? Es una BD optimizada para lograr una recuperación 
+4. Escoger como motor de base de datos Redshift ¿Por qué? Es una BD optimizada para lograr una recuperación 
    rápida de columnas de datos, con una gran aplicabilidad en proyectos de analítica, la DD permite procesar queries
    complejos de una manera óptima en la nube y de forma distribuida.
 5. Desarrollar aplicaciones de informes: Crear aplicaciones de informes y dasbord de control que permitan 
