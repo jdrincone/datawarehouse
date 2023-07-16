@@ -27,6 +27,33 @@ class AskSql:
         LIMIT 5;
     """
 
+    """3. ¿Cuáles son las tiendas y sus barrios dónde las compras en el último año estan por enciema 
+    del percentil 95?"""
+
+    compras_percentil = """
+                WITH compras_group AS (
+                SELECT 
+                    tipo_tienda,
+                    nombre_barrio,
+                    sum(total_compra) as total
+                from dataset
+                group by  tipo_tienda, nombre_barrio
+                )
+            
+                    SELECT 
+                        tipo_tienda,
+                        nombre_barrio,
+                        SUM(total) AS total
+                    FROM compras_group
+                    GROUP BY tipo_tienda, nombre_barrio
+                    HAVING SUM(total) > (
+                      SELECT PERCENTILE_CONT(0.95) WITHIN GROUP (ORDER BY total) AS percentile_95
+                      FROM compras_group
+                    
+                    )
+                    ORDER BY total DESC"""
+
+    # Extraer tablas completas
     compras = """SELECT * FROM compras"""
     tiendas = """SELECT * FROM tiendas"""
     barrios = """SELECT * FROM barrios"""

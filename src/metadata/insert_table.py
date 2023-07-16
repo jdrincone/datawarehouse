@@ -35,6 +35,15 @@ class InsertTable:
             FROM dataset_aux
             );"""
 
+    tiempos = """INSERT INTO tiempos (
+                SELECT 	DISTINCT
+                    fecha_compra,
+                    year_compra,
+                    month_compra,
+                    day_compra
+                FROM dataset_aux
+                );"""
+
     compras = """INSERT INTO compras (
             SELECT 	distinct
                 id_documento,

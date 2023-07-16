@@ -6,5 +6,6 @@ class DropTable:
     tiendas = "DROP TABLE IF EXISTS tiendas;"
     barrios = "DROP TABLE IF EXISTS barrios"
     compras = "DROP TABLE IF EXISTS compras;"
+    tiempos = "DROP TABLE IF EXISTS tiempos;"
     dataset = "DROP TABLE IF EXISTS dataset;"
     dataset_aux = "DROP TABLE IF EXISTS dataset_aux;"
